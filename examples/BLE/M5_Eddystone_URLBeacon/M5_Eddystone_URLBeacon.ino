@@ -27,7 +27,7 @@
 
 #include "esp_sleep.h"
 
-#define BEACON_NAME "Connor-York"
+#define BEACON_NAME "Unique-Name"
 
 /*
      Constant Approximate TX Power (dBm)  Description
@@ -120,7 +120,7 @@ void setBeacon() {
   BLEAdvertisementData oAdvertisementData = BLEAdvertisementData();
   BLEAdvertisementData oScanResponseData = BLEAdvertisementData();
 
-  const char url[] = "https://connor-york.com";
+  const char url[] = "https:/example-url.com";
 
   int scheme_len, ext_len = 1, i, idx, url_idx;
   char *ret_data;

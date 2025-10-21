@@ -3,6 +3,7 @@
 #include "esp_event.h"
 #include "esp_netif.h"
 
+// If set to 0, scans all channels
 #define SCAN_CHANNEL 2
 
 unsigned long start_time;
@@ -31,7 +32,11 @@ void WiFiScanEventHandler(void* arg, esp_event_base_t event_base,
     for (int i = 0; i < apCount; i++) {
 
       if (apList[i].primary == SCAN_CHANNEL) {
+
+	// Here, just checking 2 characters to lock on to
+	// the expected SSID
         if ( apList[i].ssid[7 ] == 'e' && apList[i].ssid[8] == 'n' ) {
+
 
           if ( millis() - start_time > 30000 ) {
             while (true) {

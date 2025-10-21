@@ -18,7 +18,7 @@ int scanTime = 1; //In seconds
 BLEScan *pBLEScan;
 
 
-#define BEACON_NAME "Connor-York"
+#define BEACON_NAME "Unique-Name"
 float detected_rssi = 0.0;
 unsigned long dt;
 bool valid_rssi = false;    // we need to catch if we found the rssi on
@@ -30,7 +30,7 @@ class MyAdvertisedDeviceCallbacks : public BLEAdvertisedDeviceCallbacks {
     void onResult(BLEAdvertisedDevice advertisedDevice) {
 
       // Paul:
-      // We should be able to catch "Paul-Test", useful for debugging
+      // We should be able to catch "Unique-Name", useful for debugging
       // bug maybe comment out later.
 //      if (advertisedDevice.haveName()) {      
 //        Serial.print("Device name: ");
